@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            border: 1px solid black;
+            margin:5px;
+            overflow-y: visible;
+            overflow-x: visible;
+        }
+        .container{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h3{
+            margin-top: 1em;
+        }
+        table{
+            margin-top: 2em;
+            width:100%;
+        }
+        tr,th,td{
+            text-align: center;
+            padding: 1em;
+            cursor: pointer;
+
+        }
+        table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        tr:nth-child(even) {
+            background-color: gray;
+        }
+        .adduploads{
+            width:8em;
+            height:2em;
+            background-color: aqua;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        a:link {
+         text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+         text-decoration: none;
+        }
+
+        a:active {
+           text-decoration: none;
+        }
+        a{
+            color:black;
+        }
+        .container{
+            background-color: gray;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flex"><a href="./groupchat.html">Group Chat</a></div>
+        <div class="flex"><a href="./manage_users.html">Manage Users</a></div>
+        <div class="flex"><a href="./managedocumnet.html">Manage Documents</a></div>
+        <div class="flex">Logout</div>
+    </div>
+    <h3 class="action">My Uploads</h3>
+    
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>User Email Id</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>Text Use</td>
+            <td>textuser@gmail.com</td>
+            <td><span class="edit">Edit</span>|<span class="deleteitem">Delete</span>|<span class="share">Share</span></td>
+        </tr>
+        <tr>
+            <td>ashu</td>
+            <td>ashuuser@gmail.com</td>
+            <td><span class="edit">Edit</span>|<span class="deleteitem">Delete</span>|<span class="share">Share</span></td>
+        </tr>
+        <tr>
+            <td>  </td>
+            <td> </td>
+            <td> <span> </span><span> </span> </td>
+        </tr>
+        <tr>
+            <td>  </td>
+            <td> </td>
+            <td> <span> </span><span> </span> </td>
+        </tr>
+    </table>
+    <div><h3>Shared Uploads</h3></div>
+    <table class="table">
+        <tr>
+            <th>Label</th>
+            <th>File Name</th>
+            <th>Shared By</th>
+        </tr>
+        <tr>
+            <td>Sale Team</td>
+            <td>Sale Team Attend by Aug 2021</td>
+            <td>annehunter@gmail.com</td>
+        </tr>
+        <tr>
+            <td>Office Rules</td>
+            <td>Office Rules Attend by 4Aug 20222</td>
+            <td>office@gmail.com</td>
+        </tr>
+        <tr>
+            <td>  </td>
+            <td> </td>
+            <td> </td>
+            
+            
+        </tr>
+       
+        
+    </table>
+    <div class="adduploads">+Add Uploads</div>
+    
+</body>
+<script>
+    const shareitems = document.getElementsByClassName("share");
+    const adduploads = document.getElementsByClassName("deleteitem");
+    const tagnames = document.getElementsByClassName("action")[0];
+    const adduploads1 = document.getElementsByClassName("adduploads")
+    const edititem = document.getElementsByClassName("edit");
+    
+
+    init();
+
+    function init(){
+
+        for(let i = 0; i<shareitems.length; i++){
+            shareitems[i].addEventListener("click",renders1)
+        }
+
+        for(let i = 0; i<adduploads.length; i++ ){
+            adduploads[i].addEventListener("click", renders2)
+        }
+        for(let i = 0; i<adduploads1.length; i++){
+            adduploads1[i].addEventListener("click", renders3)
+        }
+        for(let i = 0; i<edititem.length; i++){
+            edititem[i].addEventListener("click", renders10)
+        }
+    }
+
+    function renders2(){
+        const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'No, cancel!',
+        reverseButtons: true
+        
+        }).then((result) => {
+            if (result.isConfirmed) {
+            swalWithBootstrapButtons.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+            )
+            } else if (
+             /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire(
+                'Cancelled',
+                'Your imaginary file is safe :)',
+                'error'
+            )
+        }
+        })
+    
+    }
+   async function renders1(){
+        const { value: email } = await Swal.fire({
+  title: 'Share Your file',
+  input: 'file',
+  inputLabel: 'Your file name',
+  inputPlaceholder: 'file'
+})
+
+if (email) {
+  Swal.fire(`file: ${email}`)
+}
+    }
+
+    async function renders3(){
+        const { value: file } = await Swal.fire({
+            title: 'Select file Name:',
+            input: 'file',
+            inputAttributes: {
+                'accept': 'file/*',
+                'aria-label': 'Upload your file'
+            }
+        })
+
+        if (file) {
+            const reader = new FileReader()
+            reader.onload = (e) => {
+            Swal.fire({
+            title: 'Your uploaded file',
+            imageUrl: e.target.result,
+            imageAlt: 'The uploaded file'
+        })
+      }
+        reader.readAsDataURL(file)
+        }
+    }
+
+    async function renders10(){
+        const { value: email,
+        value1:password } = await Swal.fire({
+  title: 'Input email address',
+  input: 'email',
+  inputLabel: 'Enter Your email address',
+  inputPlaceholder: 'Enter your email address',
+  title1: 'Input Password',
+  input1: 'password',
+  inputLabel1: 'Enter Your Password',
+  inputPlaceholder1: 'Enter your Password address'
+})
+
+if (email && password) {
+  Swal.fire(`Entered email: ${email}`);
+  Swal.fire(`Password: ${password}`);
+}
+    }
+
+
+
+</script>
+</html>

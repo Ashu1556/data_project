@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .user-container{
+            display: flex;
+            flex-direction: column;
+            margin: 1em;
+        }
+        table{
+            width:100%;
+        }
+        tr,th,td{
+            text-align: center;
+            padding: 1em;
+            cursor: pointer;
+
+        }
+        table,td,th{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        tr:nth-child(even) {
+            background-color: gray;
+        }
+        a:link {
+         text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+         text-decoration: none;
+        }
+
+        a:active {
+           text-decoration: none;
+        }
+        .container{
+            background-color: gray;
+            color: black;
+        }
+        a{
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flex"><a href="./groupchat.html">Group Chat</a></div>
+        <div class="flex"><a href="./manage_users.html">Manage Users</a></div>
+        <div class="flex"><a href="./managedocumnet.html">Manage Documents</a></div>
+        <div class="flex">Logout</div>
+    </div>
+    <div class="user-container">
+        <p class="users">Users</p>
+
+        <div class="table">
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>User Email Id</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>Text Use</td>
+                    <td>textuser@gmail.com</td>
+                    <td><span>Edit</span>|<span class="deleteitem">Delete</span></td>
+                </tr>
+                <tr>
+                    <td>ashu</td>
+                    <td>ashuuser@gmail.com</td>
+                    <td><span>Edit</span>|<span class="deleteitem">Delete</span></td>
+                </tr>
+                <tr>
+                    <td>Deepak</td>
+                    <td>deepak123@gmail.com</td>
+                    <td><span>Edit</span>|<span class="deleteitem">Delete</span></td>
+                </tr>
+                <tr>
+                    <td>Rohit</td>
+                    <td>rohit562@gmail.com</td>
+                    <td><span>Edit</span>|<span class="deleteitem">Delete</span></td>
+                </tr>
+                <tr>
+                    <td>  </td>
+                    <td> </td>
+                    <td> <span> </span><span> </span> </td>
+                </tr>
+                <tr>
+                    <td>  </td>
+                    <td> </td>
+                    <td> <span> </span><span> </span> </td>
+                </tr>
+                <tr>
+                    <td>  </td>
+                    <td>  </td>
+                    <td> <span> </span> <span> </span> </td>
+                </tr>
+                <tr>
+                    <td>  </td>
+                    <td>  </td>
+                    <td> <span> </span> <span> </span> </td>
+                </tr>
+                <tr>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  <span> </span> <span> </span> </td>
+                </tr>
+                <tr>
+                    <td>  </td>
+                    <td>  </td>
+                    <td>  <span> </span> <span> </span> </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+    
+
+
+</body>
+<script>
+
+    const deletebox = document.getElementsByClassName("deleteitem");
+     
+     init();
+
+   function init(){
+    for(let i = 0 ; i < deletebox.length; i++){
+        deletebox[i].addEventListener("click", renders)
+    }
+
+   }
+
+   function renders(){
+      let result = confirm("Are you sure want to delte");
+      if(result == true){
+        return  alert("yes");
+      }
+      return alert("no");
+   }
+
+
+
+</script>
+</html>

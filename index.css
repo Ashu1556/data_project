@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 25em;
+    height: 15em;
+    
+    
+}
+.login,
+.register{
+    width:5em;
+    border-radius: 10px;
+}
+h3,
+p{
+     font-size: 30px;
+     font-weight: 30px;
+
+}
+
+.main-container1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:2em;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 30em;
+    height: 10em;
+}
+.textbox{
+    margin-left: 2em;
+    width: 15em;
+    height:2em;
+    border-radius: 10px;
+    
+}
+.textbox1{
+    margin-left: 5px;
+    width: 15em;
+    height: 2em;
+    border-radius: 10px;
+}
+.button{
+    height:2em;
+    width: 8em;
+    border-radius: 10px;
+    background-color: aqua;
+}
+
+.container-body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+.container-body2{
+    display: flex;
+    flex-direction: column;
+    width: 50em;
+    height:20em;
+    text-align: center;
+}
+.register {
+width: 500px;
+margin: 10px auto;
+padding: 10px;
+border: 7px solid green;
+border-radius: 10px;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+color: #444;
+background-color: black;
+box-shadow: 0 0 20px 0 #000000;
+}
+    
+h3{
+    margin: 0 15px 20px;
+    border-bottom: 2px solid green;
+    padding: 5px 10px 5px 0;
+    font-size: 1.1em;
+}
+
+div{
+    margin: 0 0 15px 0;
+    border : none;
+}
+
+label{
+    display: inline-block;
+    width: 25%;
+    text-align: right;
+    margin: 10px
+}
+
+input[type=text], input[type=password]{
+        width: 65%; 
+        font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,Sans-Serif;
+        padding: 5px;
+        font-size: 0.9em;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.07);
+}
+
+input[type=text]:focus, input[type=password]:focus{
+      background: #FFFFFF;
+}
+.button{
+    margin-left: 18em;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a:link {
+text-decoration: none;
+}
+
+a:visited {
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: none;
+}
+
+a:active {
+text-decoration: none;
+}
+
